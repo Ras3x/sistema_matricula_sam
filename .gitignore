@@ -1,0 +1,12 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Volúmenes de bases de datos de Docker (si usas)
+/db-data
+/mysql-data
+
+# Entornos virtuales o dependencias pesadas (si aplica en el futuro)
+vendor/
+node_modules/
