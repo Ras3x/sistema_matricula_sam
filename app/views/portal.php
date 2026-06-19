@@ -189,8 +189,8 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <p class="mb-1 fw-semibold">&copy; 2026 Instituto de Educación Superior Tecnológico Público Santiago Antúnez de Mayolo</p>
-            <p class="text-muted small mb-0">Huancayo, Junín, Perú | Diseñado profesionalmente como una solución integral de matrícula</p>
+            <p class="mb-1 fw-semibold">&copy; 2026 Cesar Augusto Aquino Anglas</p>
+            <p class="text-muted small mb-0">Huancayo, Junín, Perú | Cesar V1</p>
         </div>
     </footer>
 
