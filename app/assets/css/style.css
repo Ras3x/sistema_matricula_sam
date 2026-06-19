@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --sam-celeste: #0ea5e9;
+    --sam-celeste-dark: #0284c7;
+    --sam-celeste-light: #e0f2fe;
+    --sam-blue-deep: #0f172a;
+    --sam-blue-side: #1e293b;
+    --sam-gray-light: #f8fafc;
+    --sam-gray-border: #e2e8f0;
+    --sam-text-main: #334155;
+    --sam-text-muted: #64748b;
+    --sam-success: #10b981;
+    --sam-warning: #f59e0b;
+    --sam-danger: #ef4444;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--sam-gray-light);
+    color: var(--sam-text-main);
+    overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sam-gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Portal Landing y Login/Register */
+.auth-bg {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 50%, #0f172a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.auth-card:hover {
+    transform: translateY(-5px);
+}
+
+.sam-gradient-text {
+    background: linear-gradient(90deg, var(--sam-celeste-dark), #0369a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Layout del Dashboard */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+#sidebar {
+    position: relative;
+    min-width: 260px;
+    max-width: 260px;
+    background-color: var(--sam-blue-side);
+    color: #fff;
+    transition: var(--transition-smooth);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+#sidebar .sidebar-header {
+    padding: 1.5rem 1.25rem;
+    background-color: var(--sam-blue-deep);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#sidebar .sidebar-logo {
+    max-height: 50px;
+    object-fit: contain;
+}
+
+#sidebar ul.components {
+    padding: 1.5rem 0.75rem;
+}
+
+#sidebar ul li {
+    margin-bottom: 0.25rem;
+}
+
+#sidebar ul li a {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+#sidebar ul li a i {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li.active a {
+    color: #fff;
+    background-color: rgba(14, 165, 233, 0.15);
+    border-left: 4px solid var(--sam-celeste);
+}
+
+#content {
+    width: 100%;
+    padding: 2rem;
+    min-height: 100vh;
+    transition: var(--transition-smooth);
+    background-color: var(--sam-gray-light);
+}
+
+/* Tarjetas y UI General */
+.sam-card {
+    background-color: #fff;
+    border: 1px solid var(--sam-gray-border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: var(--transition-smooth);
+    margin-bottom: 1.5rem;
+}
+
+.sam-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.sam-card-header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--sam-gray-border);
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+}
+
+.sam-btn-primary {
+    background-color: var(--sam-celeste-dark);
+    border-color: var(--sam-celeste-dark);
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    font-weight: 550;
+    border-radius: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.sam-btn-primary:hover {
+    background-color: #0369a1;
+    border-color: #0369a1;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+.sam-btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--sam-celeste);
+    color: var(--sam-celeste-dark);
+    padding: 0.6rem 1.5rem;
+    font-weight: 550;
+    border-radius: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.sam-btn-outline:hover {
+    background-color: var(--sam-celeste);
+    color: #fff;
+    transform: scale(1.02);
+}
+
+/* Estados e Badges */
+.badge-pendiente {
+    background-color: var(--sam-warning);
+    color: #fff;
+}
+
+.badge-aprobado,
+.badge-ingreso,
+.badge-matriculado,
+.badge-regular {
+    background-color: var(--sam-success);
+    color: #fff;
+}
+
+.badge-rechazado,
+.badge-noingreso {
+    background-color: var(--sam-danger);
+    color: #fff;
+}
+
+/* DataTables personalización */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--sam-celeste) !important;
+    color: white !important;
+    border: 1px solid var(--sam-celeste) !important;
+}
+
+/* Carnet de Postulante Virtual */
+.carnet-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    border: 3px double var(--sam-celeste);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.15);
+}
+
+.carnet-header {
+    border-bottom: 2px solid var(--sam-celeste);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.carnet-photo {
+    width: 110px;
+    height: 140px;
+    border: 2px solid var(--sam-gray-border);
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Animaciones AOS hechas con CSS puro para fallback robusto */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

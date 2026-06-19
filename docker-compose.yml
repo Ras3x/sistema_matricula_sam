@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: sam_db
+    restart: always
+    environment:
+      POSTGRES_DB: sistema_sam
+      POSTGRES_USER: sam_user
+      POSTGRES_PASSWORD: sam_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: ./app
+    container_name: sam_web
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=sistema_sam
+      - DB_USER=sam_user
+      - DB_PASSWORD=sam_password
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
